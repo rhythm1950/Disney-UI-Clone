@@ -1,6 +1,4 @@
 <?php
-echo "Hello world! \n";
-
 // Concatenation
 $first_name = "Shahriar";
 $last_name = "Rhythm";
@@ -110,7 +108,7 @@ $a = "Hello,";
 $a .= " world!";
 
 echo $a;
-echo "\n";
+echo "\n \n";
 
 // PHP loops
 // While loop
@@ -126,8 +124,609 @@ for ($i = 0; $i < 4; $i++) {
 
 for ($row = 0; $row < 4; $row++) {
     for ($col = 0; $col <= $row; $col++) {
-        echo " " . $col;
+        echo $col . " ";
     }
     echo "\n";
 }
+
+echo "\n";
 // Foreach loop
+
+// Break and continue in loop
+for ($i = 0; $i < 6; $i++) {
+    if ($i == 3) {
+        break;
+    }
+    echo $i . "\n";
+}
+
+echo "\n";
+
+for ($i = 0; $i < 6; $i++) {
+    if ($i == 3) {
+        continue;
+    }
+    echo $i . "\n";
+}
+
+echo "\n";
+
+// Goto statement
+for ($i = 0; $i <= 5; $i++) {
+    if ($i == 3) {
+        echo "\n";
+        goto abc;
+    }
+    echo $i . " ";
+}
+echo "Test";
+
+abc:
+echo "Jumped to abc from the loop";
+
+echo "\n \n";
+
+// PHP functions
+function sum($first_number = 5, $second_number = 10)
+{
+    $total = $first_number + $second_number;
+    return $total;
+}
+
+function avg($total)
+{
+    $average = $total / 3;
+    echo $average;
+}
+
+$result = sum(15, 20);
+avg($result);
+
+echo "\n \n";
+
+
+function price_addition($mobile_price, $laptop_price, $tv_price)
+{
+    $total_price = $mobile_price + $laptop_price + $tv_price;
+    return $total_price;
+}
+
+function price_avg($total_price)
+{
+    $average_price = $total_price / 3;
+    echo $average_price;
+}
+
+$grand_total = price_addition(8000, 12000, 20000);
+price_avg($grand_total);
+
+echo "\n \n";
+
+// Function argument by reference
+function testing($string)
+{
+    $string .= " and something extra.";
+}
+
+$str = "This is a string";
+testing($str);
+echo $str;
+
+echo "\n";
+
+function testing2(&$string)
+{
+    $string .= " and something extra.";
+}
+
+$str = "This is a string";
+testing2($str);
+echo $str;
+
+echo "\n \n";
+
+// PHP variable function
+function wow()
+{
+    echo "Hello World!";
+}
+
+$func = "wow";
+$func();
+
+echo "\n";
+
+$sayHello = function ($name) {
+    echo "Hello " . $name;
+};
+
+$sayHello("Yahoo Baba");
+
+echo "\n \n";
+
+// PHP recursive function
+function display($number)
+{
+    if ($number <= 5) {
+        echo "$number \n";
+        display($number + 1);
+    }
+}
+
+display(1);
+
+echo "\n";
+
+function factorial($n)
+{
+    if ($n == 0) {
+        return 1;
+    } else {
+        return ($n * factorial($n - 1));
+    }
+}
+
+echo factorial(5);
+
+echo "\n \n";
+
+// Variable scope
+
+// Array
+$arr = array(10, 20, 30);
+$arr2 = [5, "Rahim", true, 12.5];
+$arr2[4] = "Karim";
+
+print_r($arr);
+
+echo "\n";
+
+echo $arr2[0] . "\n";
+echo $arr2[1] . "\n";
+echo $arr2[2] . "\n";
+echo $arr2[3] . "\n";
+echo $arr2[4] . "\n";
+
+echo "\n";
+
+for ($i = 0; $i <= 4; $i++) {
+    echo $arr2[$i] . "\n";
+}
+
+echo "\n";
+
+// Associative array
+$age = [
+    "Khaled" => "26",
+    "Hera" => 23,
+    "Kabir" => 20.5
+];
+
+$age["Hera"] = 21;
+echo $age["Khaled"] . "\n";
+echo $age["Kabir"] . "\n";
+
+echo "\n";
+
+var_dump($age);
+
+echo "\n";
+
+// Foeach loop for array
+$colors = ["red", "green", "blue"];
+
+foreach ($colors as $value) {
+    echo $value . "\n";
+}
+
+echo "\n";
+
+$age2 = [
+    "mahtab" => 17,
+    "ragib"  => 14,
+    "raiyan" => 12.5
+];
+
+foreach ($age2 as $key => $value) {
+    echo $key . " = " . $value . "\n";
+}
+
+echo "\n";
+
+// Muti-dimensional indexed array
+$multi_arr = [
+    [1, "Sabit", "Manager", 5000],
+    [2, "Mahmud", "Salesman", 2000],
+    [3, "Fahim", "Driver", 4000]
+];
+
+print_r($multi_arr);
+echo "\n";
+
+echo $multi_arr[1][2];
+echo "\n \n";
+
+for ($row = 0; $row < 3; $row++) {
+    for ($col = 0; $col < 3; $col++) {
+        echo $multi_arr[$row][$col] . " ";
+    }
+    echo "\n";
+}
+
+echo "\n";
+
+foreach ($multi_arr as $v1) {
+    foreach ($v1 as $v2) {
+        echo $v2 . " ";
+    }
+    echo "\n";
+}
+echo "\n \n";
+
+// Muti-dimensional indexed array
+$exam_marks = [
+    "Rezuan" => [
+        "Phy" => 85,
+        "Chem" => 78,
+        "Bio" => 89,
+    ],
+
+    "Salman" => [
+        "Phy" => 68,
+        "Chem" => 73,
+        "Bio" => 79,
+    ],
+
+    "Mansib" => [
+        "Phy" => 62,
+        "Chem" => 67,
+        "Bio" => 92,
+    ]
+];
+
+print_r($exam_marks);
+
+echo "\n";
+
+foreach ($exam_marks as $key => $value1) {
+    echo $key . " ";
+    foreach ($value1 as $value2) {
+        echo $value2 . " ";
+    }
+    echo "\n";
+}
+
+echo "\n";
+
+// Multi-dimensional array with list()
+$arr3 = [
+    [1, 2],
+    [30, 40]
+];
+
+foreach ($arr3 as list($m, $n)) {
+    echo $m . "\n" . $n . "\n";
+}
+
+echo "\n";
+
+$multi_arr = [
+    [1, "Sabit", "Manager", 5000],
+    [2, "Mahmud", "Salesman", 2000],
+    [3, "Fahim", "Driver", 4000]
+];
+
+foreach ($multi_arr as list($sl, $name, $post, $sal)) {
+    echo "$sl $name $post $sal \n";
+}
+echo "\n";
+
+$exam_marks2 = [
+    [
+        "Phy" => 85,
+        "Chem" => 78,
+        "Bio" => 89,
+    ],
+
+    [
+        "Phy" => 68,
+        "Chem" => 73,
+        "Bio" => 79,
+    ],
+
+    [
+        "Phy" => 62,
+        "Chem" => 67,
+        "Bio" => 92,
+    ]
+];
+
+foreach ($exam_marks2 as list("Phy" => $Phy, "Chem" => $Chem, "Bio" => $Bio)) {
+    echo "$Phy $Chem $Bio \n";
+}
+
+echo "\n";
+
+// PHP array: count() & sizeof() - both of them are used for same purpose; array_count_values
+$food = ["orange", "banana", "apple"];
+echo count($food) . "\n";
+echo sizeof($food);
+
+echo "\n \n";
+
+$food2 = [
+    'fruits' => ["orange", "banana", "apple"],
+    'veggie' => ["tomato", "carrot", "collard"]
+];
+
+echo count($food2) . "\n";
+echo sizeof($food2) . "\n";
+
+echo count($food2, 1) . "\n"; //default of 2nd parameter is 0
+
+echo count($food2['fruits'], 1);
+
+echo "\n \n";
+
+$len = count($food);
+for ($i = 0; $i < $len; $i++) {
+    echo $food[$i] . "\n";
+}
+
+echo "\n";
+
+$food3 = ["orange", "banana", "apple", "banana"];
+
+print_r(array_count_values($food3));
+echo "\n";
+
+// PHP array: in_array & array_search function
+$food = ["orange", "banana", "apple", 55];
+if (in_array("55", $food, true)) {
+    echo "Found it successfully";
+} else {
+    echo "Couldn't find it";
+}
+
+echo "\n";
+
+echo array_search("apple", $food);
+echo "\n";
+
+$food4 = [
+    ["orange", "banana", "apple"],
+    ["tomato", "carrot", "collard"]
+];
+
+if (in_array(["orange", "banana", "apple"], $food4)) {
+    echo "Found it successfully";
+} else {
+    echo "Couldn't find it";
+}
+
+echo "\n";
+
+$food5 = [
+    'fruits' => "orange",
+    'veggie' => "tomato"
+];
+
+echo array_search("tomato", $food5);
+echo "\n \n";
+
+// array_replace() used with index and associative array & array_replace_recursive() used with multi-dimensional associative array
+
+$food = ["orange", "banana", "apple", "grapes"];
+$vegie = ["carrot", "pea"];
+$colors = ["red", "green", "blue"];
+
+$new_array = array_replace($food, $vegie, $colors);
+print_r($new_array);
+
+$food6 = ['a' => ["red"], 'b' => ["green", "pink"]];
+$food7 = ['a' => ["yellow"], 'b' => ["black"]];
+
+$new_arr2 = array_replace_recursive($food6, $food7);
+print_r($new_arr2);
+
+echo "\n";
+
+// PHP array: array_pop() & array_push()
+$colors = ["red", "green", "blue"];
+array_pop($colors);
+print_r($colors);
+
+echo "\n";
+
+array_push($colors, "orange", "purple");
+print_r($colors);
+
+echo "\n \n";
+
+// PHP array: array_shift() & array_unshift()
+$colors = ["red", "green", "blue"];
+array_shift($colors);
+print_r($colors);
+
+echo "\n";
+
+array_unshift($colors, "orange", "purple");
+print_r($colors);
+
+echo "\n";
+
+// PHP array: array_merge(), array_merge_recursive() & array_combine() - used only with index array
+$food = ["orange", "banana", "apple", "grapes"];
+$vegie = ["carrot", "pea"];
+$colors = ["red", "green", "blue"];
+
+$new_array3 = array_merge($food, $vegie, $colors);
+print_r($new_array3);
+
+echo "\n";
+
+$food6 = ['a' => ["red"], 'b' => ["green", "pink"]];
+$food7 = ['b' => ["yellow"], 'e' => ["black"]];
+
+$new_array4 = array_merge($food6, $food7);
+print_r($new_array4);
+
+echo "\n";
+
+$new_arr5 = $food6 + $food7;
+print_r($new_arr5);
+
+echo "\n";
+
+$new_array4 = array_merge_recursive($food6, $food7);
+print_r($new_array4);
+
+echo "\n";
+
+$food6 = ['a' => ["red"], 'b' => ["green", "pink"]];
+$food7 = ['b' => ["fruits" => ["orange", "banana", "apple"]], 'e' => ["black"]];
+
+$new_array4 = array_merge_recursive($food6, $food7);
+print_r($new_array4);
+
+echo "\n";
+
+$food = ["orange", "banana", "apple"];
+$colors = ["red", "green", "blue"];
+
+$new_array4 = array_combine($food, $colors);
+print_r($new_array4);
+
+echo "\n";
+
+// array_slice(array, start, length, true)
+$colors = ["red", "green", "blue"];
+
+$new_arr =  array_slice($colors, 1, 2);
+print_r($new_arr);
+echo "\n";
+
+$new_arr =  array_slice($colors, 1, 2, true);
+print_r($new_arr);
+echo "\n";
+
+//array_splice(array, start, length, array-2)
+$colors = ["red", "green", "blue", "purple"];
+$food = ["orange", "banana"];
+
+array_splice($colors, 2, count($colors), $food);
+print_r($colors);
+echo "\n";
+
+array_splice($colors, 0, 0, $food);
+print_r($colors);
+echo "\n";
+
+// key functions
+$colors = ["14" => "red", "27" => "green", "32" => "blue", "49" => "purple"];
+
+$new_arr = array_keys($colors);
+print_r($new_arr);
+echo "\n";
+
+$new_arr = array_key_first($colors);
+print_r($new_arr);
+echo "\n";
+
+$new_arr = array_key_last($colors);
+print_r($new_arr);
+echo "\n";
+
+$new_arr = array_key_exists("14", $colors);
+if ($new_arr) {
+    echo "key exists!";
+} else {
+    echo "key doesn't exist!";
+}
+
+echo "\n \n";
+
+// intersect functions
+$colors2 = ['a' => "Red", 'b' => "green", 'c' => "blue"];
+$colors3 = ['a' => "red", 'b' => "green", 'e' => "black"];
+
+$new_arr = array_intersect($colors2, $colors3); // checks only the matching of values
+print_r($new_arr);
+echo "\n";
+
+$new_arr2 = array_intersect_key($colors2, $colors3); // checks only the matching of keys
+print_r($new_arr2);
+echo "\n";
+
+$new_arr3 = array_intersect_assoc($colors2, $colors3); // checks both the matching of keys & values
+print_r($new_arr3);
+echo "\n";
+
+// diff functions
+$colors2 = ['a' => "Red", 'b' => "green", 'c' => "blue"];
+$colors3 = ['a' => "red", 'b' => "green", 'e' => "black"];
+
+$new_arr = array_diff($colors2, $colors3); // checks only the matching of values
+print_r($new_arr);
+echo "\n";
+
+$new_arr2 = array_diff_key($colors2, $colors3); // checks only the matching of keys
+print_r($new_arr2);
+echo "\n";
+
+$new_arr3 = array_diff_assoc($colors2, $colors3); // checks both the matching of keys & values
+print_r($new_arr3);
+echo "\n";
+
+// array_values & array_unique
+$colors2 = ['a' => "Red", 'b' => "green", 'c' => "blue"];
+
+$new_arr = array_values($colors2);
+print_r($new_arr);
+echo "\n";
+
+$colors3 = ['a' => "Red", 'b' => "green", 'c' => "blue", 'd' => "Red"];
+
+$new_arr2 = array_unique($colors3);
+print_r($new_arr2);
+echo "\n";
+
+// array_column(array, value, key) & array_chunk(array, value, true)
+$multi_arr = [
+    [
+        "id" => 1,
+        "name" => "Sabit",
+        "post" =>  "Manager",
+        "salary" => 5000
+    ],
+
+    [
+        "id" => 2,
+        "name" => "Mahmud",
+        "post" => "Salesman",
+        "salary" => 2000
+    ],
+
+    [
+        "id" => 3,
+        "name" => "Fahim",
+        "post" => "Driver",
+        "salary" => 4000
+    ]
+];
+
+$new_arr = array_column($multi_arr, "name", "post");
+print_r($new_arr);
+echo "\n";
+
+$colors = ["red", "green", "blue", "purple", "yellow"];
+
+$new_arr2 = array_chunk($colors, 2);
+print_r($new_arr2);
+echo "\n";
+
+$colors3 = ['a' => "Red", 'b' => "green", 'c' => "blue", 'd' => "Red", 'e' => "black"];
+
+$new_arr3 = array_chunk($colors3, 2, true);
+print_r($new_arr3);
+echo "\n";
