@@ -898,7 +898,7 @@ print_r($colors4);
 echo "\n";
 
 $colors5 = ['a' => "red", 'b' => "blue", 'c' => "green"];
-ksort($colors5); // asescending order
+ksort($colors5); // ascending order
 print_r($colors5);
 echo "\n";
 
@@ -906,3 +906,117 @@ $colors6 = ['a' => "red", 'b' => "blue", 'c' => "green"];
 krsort($colors6); // descending order
 print_r($colors6);
 echo "\n";
+
+$array1 = ["img12.png", "img10.png", "img2.png", "img1.png"];
+natsort($array1);
+print_r($array1);
+echo "\n";
+
+$array2 = ["Img12.png", "Img10.png", "img2.png", "img1.png"];
+natsort($array2);
+print_r($array2);
+echo "\n";
+
+$array3 = ["Img12.png", "Img10.png", "img2.png", "img1.png"];
+natcasesort($array3);
+print_r($array3);
+echo "\n";
+
+$fruits = ["orange", "banana", "apple"];
+$veggie = ["tomato", "carrot", "collard"];
+array_multisort($fruits, $veggie);
+print_r($fruits);
+echo "\n";
+print_r($veggie);
+echo "\n";
+
+$fruits2 = ["orange", "banana", "apple"];
+$new_arr = array_reverse($fruits2);
+print_r($new_arr);
+echo "\n";
+
+// PHP array: traversing functions - next, prev, end, each, pos, current, key, reset
+$fruits = ["orange", "banana", "apple"];
+echo "Current: " . current($fruits) . "\n";
+echo "Key: " . key($fruits) . "\n";
+echo "Pos: " . pos($fruits) . "\n";
+
+next($fruits);
+echo "Current: " . current($fruits) . "\n";
+
+next($fruits);
+echo "Current: " . current($fruits) . "\n";
+
+prev($fruits);
+echo "Current: " . current($fruits) . "\n";
+
+end($fruits);
+echo "Current: " . current($fruits) . "\n";
+echo "Key: " . key($fruits) . "\n";
+
+// print_r(each($fruits)); why showing error??? check it now!
+
+reset($fruits);
+echo "Current: " . current($fruits) . "\n";
+
+echo "\n";
+
+// PHP array: list() - used in index array and associative array (only) with Numeric Key
+$fruits = ["orange", "banana", "apple"];
+list($a, $b, $c) = $fruits;
+echo "Value of a: " . $a . "\n";
+echo "Value of b: " . $b . "\n";
+echo "Value of c: " . $c . "\n";
+
+echo "\n";
+
+$colors = ["red", "green", "blue", "purple"];
+list($d,, $f) = $colors;
+echo "Value of d: " . $d . "\n";
+echo "Value of f: " . $f . "\n";
+
+echo "\n";
+
+$fruits2 = [0 => "apple", 1 => "banana", 2 => "orange"];
+list($x, $y, $z) = $fruits2;
+echo "Value of x: " . $x . "\n";
+echo "Value of y: " . $y . "\n";
+echo "Value of z: " . $z . "\n";
+
+echo "\n";
+
+// PHP array: extract(array, extract_rules, prefix) & compact()
+$a = "grapes";
+$fruits = ["a" => "apple", "b" => "banana", "c" => "orange"];
+extract($fruits, EXTR_PREFIX_SAME, "test");
+echo "Value of a: " . $a . "\n";
+echo "Value of a: " . $test_a . "\n";
+echo "Value of b: " . $b . "\n";
+echo "Value of c: " . $c . "\n";
+
+echo "\n";
+
+$first_name = "Yahoo";
+$last_name = " Baba";
+$age = "20";
+$gender = "Male";
+$country = "Bangladesh";
+
+$extra = ['gender', 'country'];
+
+$new_arr = compact('first_name', 'last_name', 'age', $extra);
+print_r($new_arr);
+echo "\n";
+
+// PHP array: range(start, end, step)
+$new_arr = range(0, 100, 10);
+print_r($new_arr);
+echo "\n";
+
+$new_arr2 = range('h', 'a');
+print_r($new_arr2);
+echo "\n";
+
+foreach (range('a', 'h') as $letter) {
+    echo $letter . "\n";
+}
