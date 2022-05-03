@@ -730,3 +730,179 @@ $colors3 = ['a' => "Red", 'b' => "green", 'c' => "blue", 'd' => "Red", 'e' => "b
 $new_arr3 = array_chunk($colors3, 2, true);
 print_r($new_arr3);
 echo "\n";
+
+// array_flip(array) & array_change_key_case(array, case)
+$colors = ['a' => "Red", 'b' => "green", 'c' => "blue"];
+
+$new_arr = array_flip($colors);
+print_r($new_arr);
+echo "\n";
+
+$colors = ['A' => "Red", 'b' => "green", 'c' => "blue"];
+
+$new_arr = array_change_key_case($colors, CASE_LOWER);
+print_r($new_arr);
+echo "\n";
+
+// array_sum(array) & array_product(array)
+$numbers = [10, 20, 30, 40, 50];
+echo array_sum($numbers);
+echo "\n";
+
+$numbers = ["a" => 10, "b" => 20, "c" => 30, "d" => 40];
+echo array_sum($numbers);
+echo "\n";
+
+$numbers2 = [10, 20, 30, 40, 50];
+echo array_product($numbers2);
+echo "\n";
+
+$numbers2 = ["a" => 10, "b" => 20, "c" => 30, "d" => 40];
+echo array_product($numbers2);
+echo "\n";
+
+// array_rand(array, number) & shuffle(array)
+$numbers = [10, 20, 30, 40, 50];
+$new_arr = array_rand($numbers, 2);
+echo "\n";
+
+echo $numbers[$new_arr[0]] . "\n";
+echo $numbers[$new_arr[1]] . "\n";
+
+$numbers2 = ["a" => 10, "b" => 20, "c" => 30, "d" => 40];
+$new_arr2 = array_rand($numbers2, 2);
+echo "\n";
+
+echo $numbers2[$new_arr2[0]] . "\n";
+echo $numbers2[$new_arr2[1]] . "\n";
+echo "\n";
+
+$numbers = [10, 20, 30, 40, 50];
+shuffle($numbers);
+print_r($numbers);
+echo "\n";
+
+$numbers2 = ["a" => 10, "b" => 20, "c" => 30, "d" => 40];
+shuffle($numbers2);
+print_r($numbers2);
+echo "\n";
+
+// array_fill(index, number, value) & array_fill_keys(array, value)
+$arr = ["a", "b", "c", "d"];
+$new_arr = array_fill_keys($arr, "Rhythm");
+print_r($new_arr);
+echo "\n";
+
+$new_arr = array_fill(3, 5, "Rhythm");
+print_r($new_arr);
+echo "\n";
+
+// array_walk(array, "function", parameter) - used in index and associative arrays & array_walk_recursive(array, "function", parameter) - used in multi-dimensional associative arrays
+$colors = ['a' => "Red", 'b' => "green", 'c' => "blue", 'd' => "Red"];
+
+function myFunction($value, $key, $param)
+{
+    echo $key . " " . $param . " " . $value . "\n";
+}
+array_walk($colors, "myFunction", "is a key of");
+echo "\n";
+
+$colors2 = ['d' => "orange", 'e' => "black"];
+$colors = [$colors2, 'a' => "Red", 'b' => "green", 'c' => "blue"];
+
+function myFunction2($value2, $key2, $param2)
+{
+    echo $key2 . " " . $param2 . " " . $value2 . "\n";
+}
+array_walk_recursive($colors, "myFunction2", "is a key of");
+echo "\n";
+
+// array_map(function, array)
+$a = [1, 2, 3, 4, 5];
+
+function square($n)
+{
+    return $n * $n;
+}
+$new_arr = array_map("square", $a);
+print_r($new_arr);
+echo "\n";
+
+$a2 = [1, 2, 3];
+$colors = ["Red", "green", "blue"];
+
+function equal($n, $m)
+{
+    return [$n => $m];
+}
+$new_arr2 = array_map("equal", $a2, $colors);
+print_r($new_arr2);
+echo "\n";
+
+$colors3 = ['a' => "Red", 'b' => "green", 'c' => "blue"];
+function myFunction3($n)
+{
+    return strtoupper($n);
+}
+$new_arr3 = array_map("myFunction3", $colors3);
+print_r($new_arr3);
+echo "\n";
+
+// array_reduce(array, function, initial(optional))
+$colors = ["red", "green", "blue", "purple"];
+function concat($n, $m)
+{
+    return $n . "-" . $m;
+}
+$new_array = array_reduce($colors, "concat");
+print_r($new_array);
+echo "\n";
+
+$colors = ["red", "green", "blue", "purple"];
+function concat2($n, $m)
+{
+    return $n . "-" . $m;
+}
+$new_array2 = array_reduce($colors, "concat2", "orange");
+print_r($new_array2);
+echo "\n";
+
+$numbers = [1, 2, 3, 4, 5];
+function multiply($n, $m)
+{
+    return $n * $m;
+}
+$new_array3 = array_reduce($numbers, "multiply", 1);
+print_r($new_array3);
+echo "\n";
+
+// PHP array: sorting functions - sort, rsort, asort, arsort, ksort. krsort, natsort, natcasesort, array_multisort, array_reverse
+$colors = ["red", "green", "blue", "purple"];
+sort($colors); // ascending order
+print_r($colors);
+echo "\n";
+
+$colors2 = ["red", "green", "blue", "purple"];
+rsort($colors2); // descending order
+print_r($colors2);
+echo "\n";
+
+$colors3 = ['a' => "red", 'b' => "green", 'c' => "blue"];
+asort($colors3); // ascending order
+print_r($colors3);
+echo "\n";
+
+$colors4 = ['a' => "red", 'b' => "green", 'c' => "blue"];
+arsort($colors4); // descending order
+print_r($colors4);
+echo "\n";
+
+$colors5 = ['a' => "red", 'b' => "blue", 'c' => "green"];
+ksort($colors5); // asescending order
+print_r($colors5);
+echo "\n";
+
+$colors6 = ['a' => "red", 'b' => "blue", 'c' => "green"];
+krsort($colors6); // descending order
+print_r($colors6);
+echo "\n";
