@@ -39,7 +39,7 @@ body {
   color: #000;
 }
 
-img.footer__logos {
+img.footer-logos {
   max-width: 600px;
   position: absolute;
   bottom: 30px;
@@ -54,7 +54,6 @@ img.logo {
   margin-top: -20px;
 }
 
-/* Esse > significa filho direto, isso quer dizer que é o p filho do main, e não todos os filhos p dentro do main */
 .main > p {
   margin-top: 16px;
   font-size: 12px;
@@ -66,28 +65,27 @@ h1 {
   font-size: 38px;
   line-height: 45px;
   color: #f9f9f9;
-
   margin: 20px 0 30px 0;
 }
 
-.container__precos {
+.price-container {
   display: flex;
 }
 
-.preco span {
+.price span {
   font-size: 30px;
   font-weight: bold;
   line-height: 36px;
   color: #f9f9f9;
 }
 
-.preco {
+.price {
   width: 280px;
   max-width: 100%;
   color: rgba(192, 192, 192, 0.8);
 }
 
-.preco a {
+.price a {
   padding: 16px 14px;
   background: #0063e5;
   display: block;
@@ -102,7 +100,7 @@ h1 {
   margin-top: 16px;
 }
 
-.preco a:hover {
+.price a:hover {
   background: #0483ee;
 }
 
@@ -110,21 +108,19 @@ h1 {
   margin-left: 42px;
 }
 
-/* Ajusta o posicionamento do botao da esquerda */
 .left {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-span.mes {
+span.time-span {
   color: rgba(192, 192, 192, 0.8);
   font-size: 16px;
   font-weight: 300;
 }
 
-/* Responsivo */
-
+/* Responsive */
 @media (max-width: 723px) {
   body {
     background: url(images/background-mobile.jpg) no-repeat center center;
@@ -177,23 +173,23 @@ span.mes {
     display: none;
   }
 
-  .container__precos {
+  .price-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
 
-  .preco {
+  .price {
     width: 320px;
   }
 
-  .preco span {
+  .price span {
     font-size: 24px;
     line-height: 32px;
   }
 
-  span.mes {
+  span.time-span {
     font-size: 15px;
   }
 
@@ -205,7 +201,7 @@ span.mes {
     margin-left: 0;
   }
 
-  img.footer__logos {
+  img.footer-logos {
     position: static;
     max-width: 320px;
     margin: 30px 0 15px 0;
