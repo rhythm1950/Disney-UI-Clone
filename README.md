@@ -1,16 +1,25 @@
-# Clone da Landing Page do Disney+
+# Landing Page of Disney+
+This is a website of a Tech Agency. I have developed it using HTML, CSS.
+
+### Deployment
+| Environment | Link |
+|-------------|------|
+| GitHub Pages | [GitHub Pages](https://rhythm1950.github.io/Disney-UI-Clone/) |
+
+### Technology Stack
+#### Languages:
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+#### IDE Used:
+- ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+#### Version Control:
+- ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+- ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 
-<img src="./images/logo.svg" width="300" height="300">
+### Website Preview:
+<img src="./images/Disney-Landing-Page.png" alt="Disney Landing Page">
 
-Este clone teve como objetivo aprimorar meus conhecimentos em CSS e responsividade.
-O estudo foi feito seguindo como base, um tutorial do canal [Tiger Codes](https://www.youtube.com/watch?v=o1YqbtSoPjs), e a responsividade foi feita utilizando de diversos conhecimentos adquiridos em pesquisas pela internet sobre o assunto.
-
-------------
-
-### Versão Desktop
-![Resultado final da versão desktop](images/screenshot1.png)
-
-### Versão Mobile
-![Resultado final da versão mobile](images/screenshot2.png)
 
