@@ -1,5 +1,5 @@
 # Landing Page of Disney+
-This is a website of a Tech Agency. I have developed it using HTML, CSS.
+This is the landing page of Disney website. I have developed it using HTML, CSS.
 
 ### Deployment
 | Environment | Link |
